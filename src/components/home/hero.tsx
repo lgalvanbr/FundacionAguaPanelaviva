@@ -43,16 +43,17 @@ export function HomeHero() {
         <div className="relative lg:col-span-5">
           <HeroMark progress={scrollYProgress} />
 
-          <m.div {...enter(1.25)} className="relative z-10 mx-auto -mt-10 max-w-sm sm:-mt-14 lg:absolute lg:-bottom-16 lg:-left-10 lg:mt-0">
+          <m.div
+            {...enter(2)}
+            className="relative z-10 mx-auto -mt-6 w-60 sm:-mt-10 lg:absolute lg:-bottom-20 lg:-left-14 lg:mt-0 lg:w-56"
+          >
             <Link
               href="/programas/mujer-de-influencia"
-              className="group block rounded-2xl border border-line bg-paper p-5 shadow-[0_12px_40px_-20px_rgb(4_72_51/0.35)] transition-colors hover:border-raices/40"
+              aria-label="Programa destacado: Mujer de Influencia"
+              className="group block rounded-xl border border-line bg-paper/95 px-4 pt-3 pb-3.5 shadow-[0_10px_30px_-18px_rgb(4_72_51/0.35)] backdrop-blur-sm transition-colors hover:border-raices/40"
             >
-              <span className="text-sm font-medium text-raices">Programa destacado</span>
-              <MdiAnimado delay={1.35} className="mt-3" />
-              <span className="mt-3 block text-[0.9375rem] leading-snug text-muted">
-                Una transformación que comienza en ti y trasciende hacia los demás.
-              </span>
+              <span className="text-[0.8125rem] font-semibold text-raices">Programa destacado</span>
+              <MdiAnimado delay={2.1} className="mt-2" />
             </Link>
           </m.div>
         </div>
