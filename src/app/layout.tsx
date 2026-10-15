@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_CO",
     siteName: site.name,
-    images: [{ url: "/brand/logo-completo.png", width: 1926, height: 1321, alt: site.name }],
+    images: [{ url: "/brand/logo-fundacion.png", width: 1926, height: 1321, alt: site.name }],
   },
 };
 

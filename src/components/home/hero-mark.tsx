@@ -83,7 +83,7 @@ export function HeroMark({ progress }: { progress: MotionValue<number> }) {
           className="relative aspect-[1200/243] w-full"
         >
           <Image
-            src="/brand/capas/5-texto.webp"
+            src="/brand/capas/texto-aguapanela.webp"
             alt="Fundación Aguapanela Viva"
             fill
             unoptimized

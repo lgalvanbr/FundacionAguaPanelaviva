@@ -9,7 +9,7 @@ export function SiteFooter() {
       <div className="container-page grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-4">
           <Image
-            src="/brand/logo-completo-blanco.png"
+            src="/brand/logo-fundacion-blanco.png"
             alt="Fundación Aguapanela Viva"
             width={1926}
             height={1321}
