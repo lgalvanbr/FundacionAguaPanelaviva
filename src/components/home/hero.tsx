@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { m, useReducedMotion, useScroll } from "motion/react";
 import { ButtonLink } from "@/components/button-link";
-import { MdiLogo } from "@/components/mdi-logo";
+import { MdiAnimado } from "@/components/mdi-animado";
 import { springGentle } from "@/components/motion/springs";
 import { HeroMark } from "./hero-mark";
 
@@ -46,19 +46,12 @@ export function HomeHero() {
           <m.div {...enter(1.25)} className="relative z-10 mx-auto -mt-10 max-w-sm sm:-mt-14 lg:absolute lg:-bottom-16 lg:-left-10 lg:mt-0">
             <Link
               href="/programas/mujer-de-influencia"
-              className="group flex items-center gap-4 rounded-2xl border border-line bg-paper p-4 pr-5 shadow-[0_12px_40px_-20px_rgb(4_72_51/0.35)] transition-colors hover:border-raices/40"
+              className="group block rounded-2xl border border-line bg-paper p-5 shadow-[0_12px_40px_-20px_rgb(4_72_51/0.35)] transition-colors hover:border-raices/40"
             >
-              <MdiLogo
-                variant="simbolo"
-                decorative
-                className="w-18 shrink-0 transition-transform duration-500 ease-out-soft group-hover:scale-105 group-hover:-rotate-3"
-              />
-              <span>
-                <span className="text-sm font-medium text-raices">Programa destacado</span>
-                <span className="mt-0.5 block font-display text-2xl text-forest">Mujer de Influencia</span>
-                <span className="mt-1 block text-[0.9375rem] leading-snug text-muted">
-                  Una transformación que comienza en ti y trasciende hacia los demás.
-                </span>
+              <span className="text-sm font-medium text-raices">Programa destacado</span>
+              <MdiAnimado delay={1.35} className="mt-3" />
+              <span className="mt-3 block text-[0.9375rem] leading-snug text-muted">
+                Una transformación que comienza en ti y trasciende hacia los demás.
               </span>
             </Link>
           </m.div>

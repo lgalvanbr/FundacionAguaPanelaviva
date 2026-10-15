@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ChevronRight, Handshake } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
 import { MdiDots } from "@/components/mdi-dots";
-import { MdiLogo } from "@/components/mdi-logo";
+import { MdiAnimado } from "@/components/mdi-animado";
 import { Reveal } from "@/components/motion/reveal";
 import { ProgramaLogo } from "@/components/programa-logo";
 import { programaTheme, puntoIcon } from "@/components/programa-theme";
@@ -36,7 +36,7 @@ export default function MujerDeInfluenciaPage() {
         </nav>
         <div className="flex flex-col items-center text-center">
           <h1 className="w-full max-w-3xl">
-            <MdiLogo variant="horizontal" priority className="w-full" />
+            <MdiAnimado priority delay={0.1} />
           </h1>
           <MdiDots className="mt-10" />
           <p className="mt-6 max-w-2xl font-display text-2xl text-ink md:text-3xl">{mdi.tagline}</p>

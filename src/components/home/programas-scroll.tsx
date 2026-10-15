@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MdiLogo } from "@/components/mdi-logo";
+import { MdiAnimado } from "@/components/mdi-animado";
 import { useRef } from "react";
 import { m, useReducedMotion, useScroll, useSpring } from "motion/react";
 import { mujerDeInfluencia, programas } from "@/content/site";
@@ -23,7 +23,7 @@ export function ProgramasScroll() {
           <div className="lg:sticky lg:top-28">
             <p className="font-medium text-forest">Nuestro programa insignia</p>
             <h2 id="mdi-title" className="mt-4">
-              <MdiLogo variant="horizontal" className="w-full max-w-sm" />
+              <MdiAnimado className="max-w-sm" />
             </h2>
             <p className="mt-4 text-xl text-ink">{mujerDeInfluencia.tagline}</p>
             <p className="mt-4 text-lg text-muted">{mujerDeInfluencia.about}</p>

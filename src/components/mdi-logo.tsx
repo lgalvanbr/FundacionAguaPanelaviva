@@ -5,7 +5,6 @@ import Image from "next/image";
 const variants = {
   horizontal: { src: "/brand/mdi-horizontal.webp", width: 1800, height: 669 },
   vertical: { src: "/brand/mdi-vertical.webp", width: 1200, height: 1239 },
-  simbolo: { src: "/brand/mdi-simbolo.webp", width: 800, height: 800 },
 } as const;
 
 export function MdiLogo({
