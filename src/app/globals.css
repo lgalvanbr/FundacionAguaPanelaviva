@@ -83,6 +83,28 @@
   }
 }
 
+/*
+  Tema Mujer de Influencia: paleta del logo (magenta #E0186A, morado #4B1A66,
+  turquesa #1A9BB0, naranja #F07A1E) llevada a tonos claros y poco saturados.
+  Redefine los tokens base, así todos los componentes se adaptan dentro de la sección.
+*/
+.theme-mdi {
+  --color-paper: #fdf8fa;
+  --color-sand: #f6eff6;
+  --color-line: #eadde9;
+  --color-ink: #2a1f30;
+  --color-muted: #6a5672;
+  --color-forest: #4b1a66;
+  --color-forest-deep: #36104b;
+  --color-forest-soft: #e2d3ea;
+  --color-gold: #f0a06a;
+  --color-gold-ink: #b3185e;
+  --color-mdi-magenta: #e0186a;
+  --color-mdi-teal: #1a9bb0;
+  --color-mdi-purple: #6b2d8c;
+  --color-mdi-orange: #f07a1e;
+}
+
 @utility container-page {
   width: 100%;
   max-width: 76rem;

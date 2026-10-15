@@ -30,8 +30,8 @@ export default function ProgramasPage() {
             <Image
               src="/brand/mujer-de-influencia.png"
               alt="Logo de Mujer de Influencia"
-              width={548}
-              height={567}
+              width={1000}
+              height={1032}
               className="h-auto w-28"
             />
             <h2 className="mt-5 text-5xl text-forest md:text-6xl">{mujerDeInfluencia.title}</h2>

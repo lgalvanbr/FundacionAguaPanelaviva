@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Handshake } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
+import { MdiDots } from "@/components/mdi-dots";
 import { Reveal } from "@/components/motion/reveal";
 import { ProgramaLogo } from "@/components/programa-logo";
 import { programaTheme, puntoIcon } from "@/components/programa-theme";
@@ -33,18 +34,25 @@ export default function MujerDeInfluenciaPage() {
             ))}
           </ol>
         </nav>
-        <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-14">
-          <Image
-            src="/brand/mujer-de-influencia.png"
-            alt="Logo de Mujer de Influencia"
-            width={548}
-            height={567}
-            priority
-            className="h-auto w-40 shrink-0 md:w-56"
-          />
-          <div>
-            <h1 className="text-[2.75rem] text-forest md:text-7xl">{mdi.title}</h1>
-            <p className="mt-5 max-w-2xl text-xl text-ink md:text-2xl">{mdi.tagline}</p>
+        <div className="grid items-center gap-10 md:grid-cols-12 md:gap-14">
+          <div className="relative mx-auto w-full max-w-xs md:col-span-5 md:max-w-sm">
+            <Image
+              src="/brand/mujer-de-influencia.png"
+              alt="Logo de Mujer de Influencia"
+              width={1000}
+              height={1032}
+              priority
+              sizes="(min-width: 768px) 384px, 320px"
+              className="h-auto w-full"
+            />
+          </div>
+          <div className="md:col-span-7">
+            <MdiDots />
+            <h1 className="mt-5 text-[2.75rem] text-forest md:text-7xl">{mdi.title}</h1>
+            <p className="mt-5 max-w-xl text-xl text-ink md:text-2xl">{mdi.tagline}</p>
+            <p className="mt-5 max-w-xl text-lg text-muted">
+              Un proyecto de la Fundación Aguapanela Viva para el desarrollo integral de la mujer.
+            </p>
           </div>
         </div>
       </section>
@@ -133,7 +141,8 @@ export default function MujerDeInfluenciaPage() {
           ))}
         </ol>
         <p className="mx-auto mt-12 max-w-2xl text-lg text-muted">{mdi.esencia2}</p>
-        <p className="mt-10 font-display text-3xl text-forest italic md:text-4xl">{mdi.cierre}</p>
+        <MdiDots className="mt-12" />
+        <p className="mt-6 font-display text-3xl text-forest italic md:text-4xl">{mdi.cierre}</p>
       </section>
 
       <CtaBand

@@ -24,8 +24,8 @@ export function ProgramasScroll() {
             <Image
               src="/brand/mujer-de-influencia.png"
               alt="Logo de Mujer de Influencia"
-              width={548}
-              height={567}
+              width={1000}
+              height={1032}
               className="h-auto w-32 md:w-40"
             />
             <h2 id="mdi-title" className="mt-6 text-5xl text-forest md:text-6xl">
