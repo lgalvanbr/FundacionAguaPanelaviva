@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Check, Handshake } from "lucide-react";
+import { Handshake } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
 import { Reveal } from "@/components/motion/reveal";
-import { programaTheme } from "@/components/programa-theme";
+import { programaTheme, puntoIcon } from "@/components/programa-theme";
 import { getPrograma, programas } from "@/content/site";
 
 export function generateStaticParams() {
@@ -23,32 +23,27 @@ export default async function ProgramaPage({ params }: PageProps<"/programas/muj
   const p = getPrograma((await params).programa);
   if (!p) notFound();
   const t = programaTheme[p.slug];
-  const Icon = t.icon;
   const next = programas[(programas.indexOf(p) + 1) % programas.length];
 
   return (
     <>
       <section className="container-page grid gap-12 py-16 md:grid-cols-12 md:py-24">
         <div className="md:col-span-7">
-          <span className={`flex size-16 items-center justify-center rounded-full ${t.solid} text-white`}>
-            <Icon className="size-8" aria-hidden strokeWidth={1.75} />
-          </span>
-          <p className="mt-8 font-display text-2xl leading-snug md:text-[2rem]">{p.description}</p>
+          <p className="font-display text-2xl leading-snug md:text-[2rem]">{p.description}</p>
         </div>
         <Reveal className="md:col-span-5">
           <div className="rounded-[1.75rem] border border-line bg-white/70 p-7 md:p-9">
             <h2 className={`text-3xl ${t.text}`}>¿Qué trabajamos?</h2>
             <ul className="mt-6 space-y-4">
-              {p.trabajamos.map((w) => (
-                <li key={w} className="flex gap-3 text-lg">
-                  <span
-                    className={`mt-1 flex size-6 shrink-0 items-center justify-center rounded-full ${t.solid} text-white`}
-                  >
-                    <Check className="size-4" aria-hidden strokeWidth={2.5} />
-                  </span>
-                  {w}
-                </li>
-              ))}
+              {p.trabajamos.map((w, i) => {
+                const PuntoIcon = puntoIcon[p.puntos[i].icon];
+                return (
+                  <li key={w} className="flex gap-3 text-lg">
+                    <PuntoIcon className={`mt-1 size-5.5 shrink-0 ${t.logoText}`} aria-hidden strokeWidth={2} />
+                    {w}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </Reveal>

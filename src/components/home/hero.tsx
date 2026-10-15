@@ -42,7 +42,7 @@ export function HomeHero() {
         <div className="relative lg:col-span-5">
           <HeroMark progress={scrollYProgress} />
 
-          <m.div {...enter(1.25)} className="relative z-10 mx-auto -mt-10 max-w-xs sm:-mt-14 lg:absolute lg:-bottom-4 lg:-left-6 lg:mt-0">
+          <m.div {...enter(1.25)} className="relative z-10 mx-auto -mt-10 max-w-xs sm:-mt-14 lg:absolute lg:-bottom-16 lg:-left-10 lg:mt-0">
             <Link
               href="/programas/mujer-de-influencia"
               className="group block rounded-2xl border border-line bg-paper p-5 shadow-[0_12px_40px_-20px_rgb(4_72_51/0.35)] transition-colors hover:border-raices/40"

@@ -21,15 +21,20 @@
   --color-blush: #fbb7cc;
   --color-indigo: #315a9a;
 
-  /* Programas de Mujer de Influencia (texto / fondo) */
-  --color-raices: #b0305f;
-  --color-raices-bg: #fbeff3;
-  --color-ancora: #1f6f6e;
-  --color-ancora-bg: #eaf4f3;
-  --color-reina: #5b3b87;
-  --color-reina-bg: #f1ecf7;
-  --color-visionarias: #83601f;
-  --color-visionarias-bg: #f8f1e3;
+  /* Programas de Mujer de Influencia (de la infografía oficial)
+     -logo: color del círculo · base: texto/fondos sólidos (AA) · bg: fondo de tarjeta */
+  --color-raices-logo: #ec70a2;
+  --color-raices: #b32d6a;
+  --color-raices-bg: #fdeef4;
+  --color-ancora-logo: #33aaa8;
+  --color-ancora: #1b6e6c;
+  --color-ancora-bg: #e9f6f4;
+  --color-reina-logo: #654972;
+  --color-reina: #55366f;
+  --color-reina-bg: #f5edf8;
+  --color-visionarias-logo: #d1902c;
+  --color-visionarias: #8a5a12;
+  --color-visionarias-bg: #fcf3e3;
 
   --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;

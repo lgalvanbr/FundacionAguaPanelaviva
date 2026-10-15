@@ -108,6 +108,21 @@ export const mujerDeInfluencia = {
   cierre: "Una mujer transformada puede transformar su entorno.",
 };
 
+export type PuntoIcon =
+  | "leaf"
+  | "heart"
+  | "user"
+  | "lotus"
+  | "brain"
+  | "shield"
+  | "users"
+  | "target"
+  | "hands"
+  | "bulb"
+  | "chat"
+  | "chart";
+
+// Fuente: infografías oficiales de Mujer de Influencia
 export const programas: {
   slug: ProgramaSlug;
   n: string;
@@ -116,6 +131,8 @@ export const programas: {
   esencia: string;
   description: string;
   trabajamos: string[];
+  // Viñetas cortas de la infografía (imagen 1), cada una con su ícono
+  puntos: { label: string; icon: PuntoIcon }[];
   frase: string;
   alianza?: string;
 }[] = [
@@ -129,9 +146,15 @@ export const programas: {
       "Un espacio de sanidad emocional y restauración personal que invita a las mujeres a comprender su historia, reconocer sus heridas y desarrollar herramientas para gestionar sus emociones y fortalecer su bienestar interior.",
     trabajamos: [
       "Sanidad y restauración emocional",
-      "Reconocimiento y comprensión de la historia personal",
+      "Reconocimiento de la historia personal",
       "Gestión emocional",
       "Bienestar interior",
+    ],
+    puntos: [
+      { label: "Sanidad emocional", icon: "leaf" },
+      { label: "Historia personal", icon: "leaf" },
+      { label: "Gestión emocional", icon: "leaf" },
+      { label: "Bienestar interior", icon: "leaf" },
     ],
     frase: "Volver a tu historia para comprenderte, sanar y florecer.",
   },
@@ -144,6 +167,12 @@ export const programas: {
     description:
       "Un programa que potencia la sabiduría de la mujer y fortalece su inteligencia emocional, promoviendo una relación más consciente, saludable y segura consigo misma.",
     trabajamos: ["Autoestima", "Autoconcepto", "Autocuidado", "Inteligencia emocional"],
+    puntos: [
+      { label: "Autoestima", icon: "heart" },
+      { label: "Autoconcepto", icon: "user" },
+      { label: "Autocuidado", icon: "lotus" },
+      { label: "Inteligencia emocional", icon: "brain" },
+    ],
     frase:
       "Cuando reconoces tu valor, comienzas a relacionarte contigo misma de una manera diferente.",
   },
@@ -154,12 +183,18 @@ export const programas: {
     lema: "Reconoce tu autoridad, lidera con propósito.",
     esencia: "Reconocemos nuestra capacidad de liderar.",
     description:
-      "Un programa de empoderamiento femenino que fortalece la seguridad personal, desarrolla habilidades de liderazgo y ayuda a las mujeres a reconocer su capacidad de influir positivamente en otras personas.",
+      "Un programa de empoderamiento femenino que fortalece la seguridad personal, desarrolla habilidades de liderazgo y ayuda a las mujeres a reconocer su capacidad de influir positivamente en otras personas y contribuir a su crecimiento.",
     trabajamos: [
       "Seguridad y confianza personal",
       "Empoderamiento y autoridad personal",
       "Liderazgo y rango de influencia",
-      "Servicio y desarrollo de otros",
+      "Servicio, acompañamiento y desarrollo de otros",
+    ],
+    puntos: [
+      { label: "Seguridad", icon: "shield" },
+      { label: "Liderazgo", icon: "users" },
+      { label: "Rango de influencia", icon: "target" },
+      { label: "Servicio a otros", icon: "hands" },
     ],
     frase: "Una mujer que reconoce su valor puede liderar con seguridad e influir con propósito.",
   },
@@ -176,6 +211,12 @@ export const programas: {
       "Comunicación asertiva",
       "Autosuperación y desarrollo personal",
       "Visión estratégica y liderazgo",
+    ],
+    puntos: [
+      { label: "Emprendimiento", icon: "bulb" },
+      { label: "Comunicación asertiva", icon: "chat" },
+      { label: "Autosuperación", icon: "chart" },
+      { label: "Visión y liderazgo", icon: "target" },
     ],
     frase:
       "No se trata solamente de soñar con un futuro diferente, sino de desarrollar las capacidades para construirlo.",

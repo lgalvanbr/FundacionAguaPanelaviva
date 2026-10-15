@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, m, useReducedMotion } from "motion/react";
 import { ChevronRight } from "lucide-react";
 import { getPrograma, programas } from "@/content/site";
+import { ProgramaLogo } from "@/components/programa-logo";
 import { programaTheme } from "@/components/programa-theme";
 import { ProgramaSwitcher } from "@/components/programa-switcher";
 import { springGentle } from "@/components/motion/springs";
@@ -55,8 +56,17 @@ export function ProgramaHeader() {
             animate={{ opacity: 1, y: 0, transition: reduce ? { duration: 0.15 } : springGentle }}
             exit={{ opacity: 0, y: reduce ? 0 : -10, transition: { duration: 0.15 } }}
           >
-            <h1 className={`text-[3.25rem] md:text-8xl ${programaTheme[p.slug].text}`}>{p.name}</h1>
-            <p className="mt-5 max-w-2xl text-xl text-ink md:text-2xl">{p.lema}</p>
+            <div className="flex items-center gap-5 md:gap-8">
+              <ProgramaLogo slug={p.slug} className="size-16 shrink-0 md:size-32" title={`Logo de ${p.name}`} />
+              <div>
+                <h1
+                  className={`font-sans text-[2rem] font-bold tracking-wide uppercase sm:text-5xl md:text-7xl ${programaTheme[p.slug].text}`}
+                >
+                  {p.name}
+                </h1>
+                <p className={`mt-2 max-w-2xl text-lg font-medium md:text-2xl ${programaTheme[p.slug].text}`}>{p.lema}</p>
+              </div>
+            </div>
           </m.div>
         </AnimatePresence>
 
