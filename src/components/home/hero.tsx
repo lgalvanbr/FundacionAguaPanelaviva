@@ -1,18 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { m, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { m, useReducedMotion, useScroll } from "motion/react";
 import { ButtonLink } from "@/components/button-link";
-import { springCinematic, springGentle } from "@/components/motion/springs";
+import { springGentle } from "@/components/motion/springs";
+import { HeroMark } from "./hero-mark";
 
 export function HomeHero() {
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const markY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 120]);
-  const markRotate = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -6]);
 
   // El h1 no se anima: es el contenido principal (LCP) y debe pintarse de inmediato.
   const enter = (delay: number) => ({
@@ -42,27 +40,9 @@ export function HomeHero() {
         </div>
 
         <div className="relative lg:col-span-5">
-          <m.div
-            initial={{ opacity: 0, scale: reduce ? 1 : 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={reduce ? { duration: 0.2 } : { ...springCinematic, delay: 0.15 }}
-            className="relative mx-auto aspect-square w-full max-w-md"
-          >
-            <div className="absolute inset-0 rounded-full bg-sand" aria-hidden />
-            <m.div style={{ y: markY, rotate: markRotate }} className="absolute inset-[14%] flex items-center">
-              <Image
-                src="/brand/isotipo.png"
-                alt=""
-                width={1338}
-                height={940}
-                priority
-                sizes="(min-width: 1024px) 360px, 70vw"
-                className="h-auto w-full"
-              />
-            </m.div>
-          </m.div>
+          <HeroMark progress={scrollYProgress} />
 
-          <m.div {...enter(0.45)} className="relative z-10 mx-auto -mt-10 max-w-xs sm:-mt-14 lg:absolute lg:-bottom-4 lg:-left-6 lg:mt-0">
+          <m.div {...enter(1.25)} className="relative z-10 mx-auto -mt-10 max-w-xs sm:-mt-14 lg:absolute lg:-bottom-4 lg:-left-6 lg:mt-0">
             <Link
               href="/programas/mujer-de-influencia"
               className="group block rounded-2xl border border-line bg-paper p-5 shadow-[0_12px_40px_-20px_rgb(4_72_51/0.35)] transition-colors hover:border-raices/40"
