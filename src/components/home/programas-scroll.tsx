@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { MdiLogo } from "@/components/mdi-logo";
 import { useRef } from "react";
 import { m, useReducedMotion, useScroll, useSpring } from "motion/react";
 import { mujerDeInfluencia, programas } from "@/content/site";
@@ -21,15 +21,9 @@ export function ProgramasScroll() {
       <div ref={ref} className="container-page grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
-            <Image
-              src="/brand/mujer-de-influencia.png"
-              alt="Logo de Mujer de Influencia"
-              width={1000}
-              height={1032}
-              className="h-auto w-32 md:w-40"
-            />
-            <h2 id="mdi-title" className="mt-6 text-5xl text-forest md:text-6xl">
-              {mujerDeInfluencia.title}
+            <p className="font-medium text-forest">Nuestro programa insignia</p>
+            <h2 id="mdi-title" className="mt-4">
+              <MdiLogo variant="horizontal" className="w-full max-w-sm" />
             </h2>
             <p className="mt-4 text-xl text-ink">{mujerDeInfluencia.tagline}</p>
             <p className="mt-4 text-lg text-muted">{mujerDeInfluencia.about}</p>

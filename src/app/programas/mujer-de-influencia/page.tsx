@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Handshake } from "lucide-react";
 import { CtaBand } from "@/components/cta-band";
 import { MdiDots } from "@/components/mdi-dots";
+import { MdiLogo } from "@/components/mdi-logo";
 import { Reveal } from "@/components/motion/reveal";
 import { ProgramaLogo } from "@/components/programa-logo";
 import { programaTheme, puntoIcon } from "@/components/programa-theme";
@@ -34,26 +34,15 @@ export default function MujerDeInfluenciaPage() {
             ))}
           </ol>
         </nav>
-        <div className="grid items-center gap-10 md:grid-cols-12 md:gap-14">
-          <div className="relative mx-auto w-full max-w-xs md:col-span-5 md:max-w-sm">
-            <Image
-              src="/brand/mujer-de-influencia.png"
-              alt="Logo de Mujer de Influencia"
-              width={1000}
-              height={1032}
-              priority
-              sizes="(min-width: 768px) 384px, 320px"
-              className="h-auto w-full"
-            />
-          </div>
-          <div className="md:col-span-7">
-            <MdiDots />
-            <h1 className="mt-5 text-[2.75rem] text-forest md:text-7xl">{mdi.title}</h1>
-            <p className="mt-5 max-w-xl text-xl text-ink md:text-2xl">{mdi.tagline}</p>
-            <p className="mt-5 max-w-xl text-lg text-muted">
-              Un proyecto de la Fundación Aguapanela Viva para el desarrollo integral de la mujer.
-            </p>
-          </div>
+        <div className="flex flex-col items-center text-center">
+          <h1 className="w-full max-w-3xl">
+            <MdiLogo variant="horizontal" priority className="w-full" />
+          </h1>
+          <MdiDots className="mt-10" />
+          <p className="mt-6 max-w-2xl font-display text-2xl text-ink md:text-3xl">{mdi.tagline}</p>
+          <p className="mt-4 max-w-xl text-lg text-muted">
+            Un proyecto de la Fundación Aguapanela Viva para el desarrollo integral de la mujer.
+          </p>
         </div>
       </section>
 
