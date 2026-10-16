@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { HandCoins, Handshake, HeartHandshake, type LucideIcon } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
+import { DonarQR } from "@/components/donar-qr";
 import { Reveal } from "@/components/motion/reveal";
 import { PageIntro } from "@/components/page-intro";
 import { site } from "@/content/site";
+import { qrSvg } from "@/lib/qr";
 
 export const metadata: Metadata = {
   title: "Involúcrate",
@@ -27,7 +29,8 @@ const formas: {
     detalle: [
       "Donaciones únicas o mensuales",
       "Donaciones en especie para actividades y encuentros",
-      "Te enviamos los datos de la cuenta y el certificado de donación",
+      "Por QR desde la app Bancolombia, o escríbenos para recibir los datos de la cuenta",
+      "Te enviamos tu certificado de donación",
     ],
     cta: "Quiero donar",
     asunto: "Quiero donar",
@@ -59,6 +62,35 @@ const formas: {
     asunto: "Propuesta de alianza",
   },
 ];
+
+// QR de PRUEBA: al escanearlo muestra este mensaje. No recibe dinero.
+// Reemplazar por el contenido del QR oficial de Bancolombia de la fundación.
+const donacionQr = qrSvg(
+  // Sin tildes: algunos lectores de QR de celular no decodifican bien UTF-8.
+  "QR de prueba - Fundacion Aguapanela Viva. Este codigo aun no recibe donaciones. Escribenos a " +
+    site.contact.email,
+);
+
+function Detalle({ f, dark = false }: { f: (typeof formas)[number]; dark?: boolean }) {
+  return (
+    <>
+      <ul className={`mt-8 divide-y ${dark ? "divide-white/15" : "divide-line"}`}>
+        {f.detalle.map((d) => (
+          <li key={d} className="py-4 text-lg">
+            {d}
+          </li>
+        ))}
+      </ul>
+      <ButtonLink
+        href={`mailto:${site.contact.email}?subject=${encodeURIComponent(f.asunto)}`}
+        variant={dark ? "light" : "primary"}
+        className="mt-8"
+      >
+        {f.cta}
+      </ButtonLink>
+    </>
+  );
+}
 
 export default function InvolucratePage() {
   return (
@@ -92,22 +124,10 @@ export default function InvolucratePage() {
                     {f.title}
                   </h2>
                   <p className={`mt-5 max-w-lg text-lg ${i === 0 ? "text-forest-soft" : "text-muted"}`}>{f.text}</p>
+                  {i === 0 && <Detalle f={f} dark />}
                 </div>
                 <div className="md:col-span-6 md:pt-20">
-                  <ul className={`divide-y ${i === 0 ? "divide-white/15" : "divide-line"}`}>
-                    {f.detalle.map((d) => (
-                      <li key={d} className="py-4 text-lg">
-                        {d}
-                      </li>
-                    ))}
-                  </ul>
-                  <ButtonLink
-                    href={`mailto:${site.contact.email}?subject=${encodeURIComponent(f.asunto)}`}
-                    variant={i === 0 ? "light" : "primary"}
-                    className="mt-8"
-                  >
-                    {f.cta}
-                  </ButtonLink>
+                  {i === 0 ? <DonarQR svg={donacionQr} /> : <Detalle f={f} />}
                 </div>
               </Reveal>
             </section>
